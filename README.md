@@ -1,6 +1,6 @@
 # 自定义View专题学习项目
 
-> - **绘制基础** : Paint & Canvas & 路径 & Region
+> - **绘制基础** : Paint & Canvas & Path & Region
 > - 动画:
 > - &emsp;**帧动画** : XML实现 & 代码实现
 > - &emsp;**视图动画** : 平移，缩放，透明度等XML实现 & 代码实现

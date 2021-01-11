@@ -50,8 +50,6 @@ public class PaintCanvasView extends View {
         //使用Canvas绘制一个圆，坐标(190,200)，半径为100
         paint.setColor(0x7EFFFF00);//重新设置画笔颜色为:7EFFFF00
         canvas.drawCircle(190,200,100,paint);
-
-
     }
 
     /**
