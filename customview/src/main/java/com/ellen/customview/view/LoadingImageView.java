@@ -1,4 +1,4 @@
-package com.ellen.customview;
+package com.ellen.customview.view;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -11,6 +11,13 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
+import com.ellen.customview.R;
+import com.ellen.customview.evaluator.MyEvaluator;
+import com.ellen.customview.interpolator.MyInterpolator;
+
+/**
+ * 加载视图View
+ */
 @SuppressLint("AppCompatCustomView")
 public class LoadingImageView extends ImageView {
 
@@ -44,7 +51,10 @@ public class LoadingImageView extends ImageView {
         valueAnimator.setRepeatMode(ValueAnimator.RESTART);
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
         valueAnimator.setDuration(2000);
-        valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+        //设置估值器
+        valueAnimator.setEvaluator(new MyEvaluator());
+        //设置插值器
+        valueAnimator.setInterpolator(new MyInterpolator());
 
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override

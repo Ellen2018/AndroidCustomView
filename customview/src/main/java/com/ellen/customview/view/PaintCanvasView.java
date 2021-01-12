@@ -1,4 +1,4 @@
-package com.ellen.customview;
+package com.ellen.customview.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
