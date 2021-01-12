@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/circle" />
+
+    <Button
+        android:id="@+id/bt_menu_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:text="1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="88dp"
+        android:visibility="gone"
+        android:background="@drawable/circle" />
+
+    <Button
+        android:id="@+id/bt_menu_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:text="2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="88dp"
+        android:visibility="gone"
+        android:background="@drawable/circle" />
+
+    <Button
+        android:id="@+id/bt_menu_3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:text="3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="88dp"
+        android:visibility="gone"
+        android:background="@drawable/circle" />
+
+    <Button
+        android:id="@+id/bt_menu_4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:text="4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="88dp"
+        android:visibility="gone"
+        android:background="@drawable/circle" />
+
+
+
+    <Button
+        android:id="@+id/bt_menu_5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:text="5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="88dp"
+        android:visibility="gone"
+        android:background="@drawable/circle" />
+
+</RelativeLayout>

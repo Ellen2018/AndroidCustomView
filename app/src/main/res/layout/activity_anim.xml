@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.ellen.customview.view.FallingBallTextView
         android:id="@+id/tv_target"
         android:layout_width="50dp"
         android:text="对象"

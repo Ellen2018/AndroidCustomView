@@ -2,7 +2,10 @@ package com.ellen.androidcustomview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +14,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.AnticipateInterpolator;
 import android.view.animation.AnticipateOvershootInterpolator;
@@ -28,10 +32,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ellen.customview.interpolator.CharEvaluator;
 import com.ellen.customview.interpolator.FallingBallEvaluator;
+import com.ellen.customview.view.FallingBallTextView;
 
 public class AnimActivity extends AppCompatActivity {
 
-    private TextView tvTarget;
+    private FallingBallTextView tvTarget;
     private Button btStartAnim;
 
     @Override
@@ -57,7 +62,13 @@ public class AnimActivity extends AppCompatActivity {
 
                 //codeCharObjectAnimator();
 
-                codeFallingBallAnimator();
+                //codeFallingBallAnimator();
+
+                //codeObjectAnimator();
+
+                //codeObjectAnimatorObject();
+
+                codeMakeUpAnimator();
             }
         });
     }
@@ -221,6 +232,9 @@ public class AnimActivity extends AppCompatActivity {
 
     private Point mCurPoint;
 
+    /**
+     * 演示通过自定义估值器实现滑轴动画效果
+     */
     private void codeFallingBallAnimator(){
         ValueAnimator valueAnimator =
                 ValueAnimator.ofObject(new FallingBallEvaluator(),new Point(0,0),new Point(500,500));
@@ -236,4 +250,45 @@ public class AnimActivity extends AppCompatActivity {
         valueAnimator.setDuration(2000);
         valueAnimator.start();
     }
+
+    /**
+     * 演示ObjectAnimator的用法
+     */
+    private void codeObjectAnimator(){
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(tvTarget,"translationX",0,200,-200,0);
+        objectAnimator.setDuration(2000);
+        objectAnimator.start();
+    }
+
+    /**
+     * 演示ObjectAnimator的Object用法
+     */
+    private void codeObjectAnimatorObject(){
+        ObjectAnimator objectAnimator =
+                ObjectAnimator.ofObject(tvTarget,"fallingPos",
+                        new FallingBallEvaluator(),new Point(0,0),new Point(500,500));
+
+        objectAnimator.setDuration(2000);
+        objectAnimator.start();
+    }
+
+    /**
+     * 演示组合动画
+     */
+    private void codeMakeUpAnimator(){
+        ObjectAnimator oa1 =
+                ObjectAnimator.ofInt(tvTarget,"BackgroundColor",0xffff00ff,0xffffff00,0xffff00ff);
+
+        ObjectAnimator oa2 = ObjectAnimator.ofFloat(tvTarget,"translationY",0,400,0);
+
+        ObjectAnimator oa3 = ObjectAnimator.ofFloat(tvTarget,"translationY",0,400,0);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        //playSequentially依次进行动画
+        animatorSet.playSequentially(oa1,oa2,oa3);
+        //playTogether并行进行动画
+        //animatorSet.playTogether(oa1,oa2,oa3);
+        animatorSet.setDuration(1000);
+        animatorSet.start();
+   }
 }
