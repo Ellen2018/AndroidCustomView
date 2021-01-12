@@ -3,6 +3,7 @@ package com.ellen.androidcustomview;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,9 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ellen.customview.interpolator.CharEvaluator;
+import com.ellen.customview.interpolator.FallingBallEvaluator;
 
 public class AnimActivity extends AppCompatActivity {
 
@@ -49,7 +53,11 @@ public class AnimActivity extends AppCompatActivity {
 
                 //codeInterpolator();
 
-                codeValueAnimator();
+                //codeValueAnimator();
+
+                //codeCharObjectAnimator();
+
+                codeFallingBallAnimator();
             }
         });
     }
@@ -188,6 +196,44 @@ public class AnimActivity extends AppCompatActivity {
                 //动画结束时调用isReverse
             }
         });
+        valueAnimator.start();
+    }
+
+    /**
+     * 演示以Char值变化的属性动画ValueAnimator
+     */
+    private void codeCharObjectAnimator(){
+        ValueAnimator valueAnimator =
+                ValueAnimator.ofObject(new CharEvaluator(),new Character('A'),new Character('Z'));
+
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+               char text = (char) animation.getAnimatedValue();
+               tvTarget.setText(String.valueOf(text));
+            }
+        });
+
+        valueAnimator.setDuration(1000);
+        valueAnimator.setInterpolator(new AccelerateInterpolator());
+        valueAnimator.start();
+    }
+
+    private Point mCurPoint;
+
+    private void codeFallingBallAnimator(){
+        ValueAnimator valueAnimator =
+                ValueAnimator.ofObject(new FallingBallEvaluator(),new Point(0,0),new Point(500,500));
+
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                mCurPoint = (Point) animation.getAnimatedValue();
+                tvTarget.layout(mCurPoint.x,mCurPoint.y,mCurPoint.x + tvTarget.getWidth(),mCurPoint.y + tvTarget.getHeight());
+
+            }
+        });
+        valueAnimator.setDuration(2000);
         valueAnimator.start();
     }
 }

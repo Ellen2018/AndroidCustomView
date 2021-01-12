@@ -6,12 +6,11 @@
 
     <TextView
         android:id="@+id/tv_target"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:text="对象"
         android:textColor="@color/white"
         android:gravity="center"
-        android:background="@color/black"
-        android:layout_centerHorizontal="true"
+        android:background="@drawable/circle"
         android:layout_height="50dp"/>
 
 
