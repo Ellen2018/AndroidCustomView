@@ -1,6 +1,10 @@
 package com.ellen.androidcustomview;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
@@ -43,7 +47,9 @@ public class AnimActivity extends AppCompatActivity {
 
                 //codeAnim();
 
-                codeInterpolator();
+                //codeInterpolator();
+
+                codeValueAnimator();
             }
         });
     }
@@ -125,5 +131,63 @@ public class AnimActivity extends AppCompatActivity {
         scaleAnimation.setInterpolator(new CycleInterpolator(2));
 
     tvTarget.startAnimation(scaleAnimation);
+    }
+
+    /**
+     * 演示属性动画ValueAnimator的用法
+     */
+    private void codeValueAnimator(){
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(0,400);
+        valueAnimator.setDuration(1000);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int curValue = (Integer) animation.getAnimatedValue();
+                //重新设置TextView的位置
+                tvTarget.layout(curValue,curValue,curValue+tvTarget.getWidth(),curValue+ tvTarget.getHeight());
+            }
+        });
+        valueAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationCancel(Animator animation) {
+               //动画退出时调用
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                //动画结束时调用
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+               //动画重复开始时调用
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                //动画开始时调用
+            }
+
+            @Override
+            public void onAnimationPause(Animator animation) {
+                //动画暂停时调用
+            }
+
+            @Override
+            public void onAnimationResume(Animator animation) {
+                //动画恢复时调用
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation, boolean isReverse) {
+                 //动画开始时调用isReverse
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation, boolean isReverse) {
+                //动画结束时调用isReverse
+            }
+        });
+        valueAnimator.start();
     }
 }
