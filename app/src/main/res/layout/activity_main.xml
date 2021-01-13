@@ -6,12 +6,12 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="500dp"
-        android:layout_height="500dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <com.ellen.customview.view.LoadingImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <com.ellen.customview.view.AliPayView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
 
 
