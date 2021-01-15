@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AutoView">
+        <attr name="intValue" format="integer"/>
+        <attr name="floatValue" format="float"/>
+        <attr name="dpValue" format="dimension"/>
+        <attr name="strValue" format="string"/>
+        <attr name="age">
+            <flag name="child" value="10"/>
+            <flag name="young" value="18"/>
+            <flag name="old" value="60"/>
+        </attr>
+    </declare-styleable>
+</resources>
