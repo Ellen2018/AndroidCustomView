@@ -40,6 +40,7 @@ public class AutoView extends View {
                 age = typedArray.getInt(attr,-1);
             }
         }
+        //回收
         typedArray.recycle();
     }
 
