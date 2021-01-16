@@ -19,11 +19,19 @@
         android:layout_height="200dp">
 
         <ImageView
-            android:id="@+id/iv"
-            android:layout_width="wrap_content"
+            android:id="@+id/iv_1"
+            android:layout_width="match_parent"
             android:scaleType="centerCrop"
             android:src="@mipmap/bg_splash"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:src="@mipmap/bg_splash2"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 

@@ -10,12 +10,15 @@ public class Rotate3DAnimator extends Animation {
     private final float mFromDegress;
     private final float mEndDegress;
 
+    private float mDepthZ = 400;
     private float mCenterX,mCenterY;
     private Camera mCamera;
+    private final boolean mReverse;
 
-    public Rotate3DAnimator(float mFromDegress,float mEndDegress){
+    public Rotate3DAnimator(float mFromDegress,float mEndDegress,boolean reverse){
         this.mFromDegress = mFromDegress;
         this.mEndDegress = mEndDegress;
+        this.mReverse = reverse;
     }
 
     @Override
@@ -33,7 +36,13 @@ public class Rotate3DAnimator extends Animation {
 
         float degress = mFromDegress + (mEndDegress - mFromDegress) * interpolatedTime;
         mCamera.save();
-
+        float z;
+        if(mReverse){
+            z = mDepthZ * interpolatedTime;
+        }else {
+            z = mDepthZ * (1f - interpolatedTime);
+        }
+        mCamera.translate(0f,0f,z);
 
         final Matrix matrix = t.getMatrix();
         mCamera.rotateY(degress);
