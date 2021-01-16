@@ -1,4 +1,4 @@
-package com.ellen.androidcustomview;
+package com.ellen.androidcustomview.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -30,6 +30,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ellen.androidcustomview.R;
 import com.ellen.customview.interpolator.CharEvaluator;
 import com.ellen.customview.interpolator.FallingBallEvaluator;
 import com.ellen.customview.view.FallingBallTextView;

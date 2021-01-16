@@ -1,4 +1,4 @@
-package com.ellen.androidcustomview;
+package com.ellen.androidcustomview.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.animation.AccelerateInterpolator;
 
+import com.ellen.androidcustomview.R;
 import com.ellen.customview.interpolator.CharEvaluator;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,15 +1,17 @@
-package com.ellen.androidcustomview;
+package com.ellen.androidcustomview.activity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SurfaceViewActivity extends AppCompatActivity {
+import com.ellen.androidcustomview.R;
+
+public class AutoViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_surface_view);
+        setContentView(R.layout.activity_auto_view);
     }
 }

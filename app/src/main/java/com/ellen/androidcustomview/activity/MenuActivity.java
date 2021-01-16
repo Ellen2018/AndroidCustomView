@@ -1,4 +1,4 @@
-package com.ellen.androidcustomview;
+package com.ellen.androidcustomview.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ellen.androidcustomview.R;
 
 public class MenuActivity extends AppCompatActivity {
 

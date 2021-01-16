@@ -1,4 +1,4 @@
-package com.ellen.androidcustomview;
+package com.ellen.androidcustomview.activity;
 
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ellen.androidcustomview.R;
 
 public class SplashActivity extends AppCompatActivity {
 

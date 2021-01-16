@@ -9,11 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.ellen.customview.view.AliPayView
+        <com.ellen.customview.view.CameraImageView
+            android:id="@+id/camera_img_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:src="@mipmap/cat"
             android:layout_centerInParent="true" />
-
 
     </RelativeLayout>
 
