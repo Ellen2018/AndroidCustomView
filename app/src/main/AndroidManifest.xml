@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCustomView">
-        <activity android:name=".activity.Rotate3DActivity">
+        <activity android:name=".activity.ClockViewGroupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
